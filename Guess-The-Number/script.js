@@ -26,13 +26,8 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.number').style.width = '30rem';
 
     //highscore
-    if (!highScore) {
-      if (highScore < score)
-        document.querySelector('.highscore').textContent = score;
-    }
-    document.querySelector('.highscore').textContent = score;
-
-    //
+    if (score > highScore) highScore = score;
+    document.querySelector('.highscore').textContent = highScore;
   } else if (secretNumber > guess) {
     if (score > 1) {
       document.querySelector('.message').textContent = '🔻 Too Low';
