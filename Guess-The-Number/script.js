@@ -17,11 +17,11 @@ document.querySelector('.check').addEventListener('click', function () {
       '❌ No Number');
     console.log(message);
   } else if (secretNumber === guess) {
-    console.log('equal');
+    document.querySelector('.message').textContent = '✔️ Correct Number';
   } else if (secretNumber > guess) {
-    console.log('Too Low');
+    document.querySelector('.message').textContent = '🔻 Too Low';
   } else {
-    console.log('Too High');
+    document.querySelector('.message').textContent = '🔺 Too High';
   }
 
   //   secretNumber === guess
