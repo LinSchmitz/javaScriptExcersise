@@ -1,3 +1,5 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap'); */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,7 +7,7 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Orbitron', sans-serif;
   background: #0f172a;
   color: white;
   text-align: center;
@@ -44,7 +46,27 @@ h1 {
 }
 
 .btn {
-  padding: 10px 20px;
+  background: linear-gradient(135deg, #38bdf8, #22c55e);
+  border: none;
+  border-radius: 999px;
+  padding: 12px 28px;
+  font-family: inherit;
   font-size: 16px;
+  font-weight: 600;
+  color: #020617;
   cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
