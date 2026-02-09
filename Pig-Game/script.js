@@ -4,6 +4,9 @@ const roll = document.querySelector('.btn--roll');
 const hold = document.querySelector('.btn--hold');
 const newGame = document.querySelector('.btn--new');
 
+const player1 = document.querySelector('.player--0');
+const player2 = document.querySelector('.player--1');
+
 const player1TotalScore = document.querySelector('#score--0');
 const player1CurrentScore = document.querySelector('#current--0');
 
@@ -32,4 +35,13 @@ hold.addEventListener('click', function () {
   // Reset current score
   currentScore = 0;
   player1CurrentScore.textContent = 0;
+
+  //switch player
+  if (player1.classList.contains('player--active')) {
+    player1.classList.remove('player--active');
+    player2.classList.add('player--active');
+  } else {
+    player1.classList.add('player--active');
+    player2.classList.remove('player--active');
+  }
 });
