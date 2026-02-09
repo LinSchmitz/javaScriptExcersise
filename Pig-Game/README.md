@@ -1,19 +1,30 @@
-# Modal Window Project
+# Pig Game
 
-A simple modal window implementation built with **vanilla JavaScript**.
-This project demonstrates DOM manipulation, event handling, and basic UI state management using CSS classes.
+A classic **Pig Dice Game** built with **vanilla JavaScript**.
+This project focuses on DOM manipulation, game state management, and event-driven logic.
+
+---
+
+![alt text](<Screenshot 2026-02-09 094313.png>)
+
+## Game Rules
+
+- The game has **2 players**
+- Players take turns rolling a dice
+- Each roll adds to the **current score**
+- Rolling a **1** resets the current score and switches the player
+- Players can **hold** to add the current score to their total score
+- The first player to reach **100 points** wins the game
 
 ---
 
 ## Features
 
-- Open modal by clicking buttons
-- Close modal by:
-  - Clicking the close button
-  - Clicking outside the modal (overlay)
-  - Pressing the `Escape` key
-
-- Clean separation of logic using reusable functions
+- Dice roll with random values
+- Player turn switching
+- Current score and total score tracking
+- Win condition handling
+- Game reset functionality
 
 ---
 
@@ -27,9 +38,10 @@ This project demonstrates DOM manipulation, event handling, and basic UI state m
 
 ## How It Works
 
-- The modal visibility is controlled by adding and removing a `hidden` CSS class
-- Event listeners handle user interactions
-- Keyboard accessibility is implemented using the `Escape` key
+- Game state is stored in JavaScript variables
+- UI updates are handled through DOM manipulation
+- CSS classes are used to reflect active players and winners
+- Event listeners manage user interactions
 
 ---
 
@@ -45,25 +57,25 @@ This project demonstrates DOM manipulation, event handling, and basic UI state m
 
 ## JavaScript Logic Overview
 
-- DOM elements are selected once and reused
-- `openModal()` shows the modal
-- `closeModal()` hides the modal
-- Multiple buttons can trigger the modal
-- Defensive checks prevent runtime errors
+- Random dice generation using `Math.random()`
+- Player switching logic
+- Score accumulation and reset
+- Win state handling
+- Game initialization function for resetting state
 
 ---
 
 ## What This Project Demonstrates
 
-- Working with `querySelector` and `querySelectorAll`
-- Using `forEach` with NodeLists
-- Handling keyboard events
-- Clean and readable JavaScript functions
-- Basic accessibility considerations
+- Managing application state
+- Updating the UI based on state changes
+- Handling multiple event listeners
+- Writing clean and readable functions
+- Implementing simple game logic
 
 ---
 
 ## Author
 
-Built by **Lin Schmitz** 🚀
+Built by **Lin Schmitz** 🎲
 Frontend Developer in progress
