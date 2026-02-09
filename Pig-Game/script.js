@@ -7,29 +7,23 @@ const newGame = document.querySelector('.btn--new');
 const player0 = document.querySelector('.player--0');
 const player1 = document.querySelector('.player--1');
 
-const player0TotalScore = document.querySelector('#score--0');
-const player0CurrentScore = document.querySelector('#current--0');
+const score0El = document.querySelector('#score--0');
+const score1El = document.getElementById('score--1');
 
-const player1TotalScore = document.querySelector('#score--1');
+const player0CurrentScore = document.querySelector('#current--0');
 const player1CurrentScore = document.querySelector('#current--1');
 
 const diceImage = document.querySelector('.dice');
 
 // 👉 REAL game data (state)
-let diceImg;
 
 const scores = [0, 0];
 let currentScore = 0;
-// let totalScore = 0;
-
-let p0TotalScore = 0;
-let p1TotalScore = 0;
-
 let activePlayer = 0;
+let playing = true;
 
-// Set total score to 0 at the beginning
-player0TotalScore.textContent = p0TotalScore;
-player1TotalScore.textContent = p1TotalScore;
+score0El.textContent = 0;
+score1El.textContent = 0;
 
 diceImage.classList.add('hidden');
 const switchPlayer = function () {
@@ -41,20 +35,22 @@ const switchPlayer = function () {
 };
 
 const rollDice = function () {
-  const dice = Math.trunc(Math.random() * 6) + 1;
+  if (playing) {
+    const dice = Math.trunc(Math.random() * 6) + 1;
 
-  //dice image display
-  diceImage.classList.remove('hidden');
-  diceImage.src = `dice-${dice}.png`;
+    //dice image display
+    diceImage.classList.remove('hidden');
+    diceImage.src = `dice-${dice}.png`;
 
-  //check for rolled 1
-  if (dice !== 1) {
-    currentScore += dice;
-    document.getElementById(`current--${activePlayer}`).textContent =
-      currentScore;
-  } else {
-    //switch to next player
-    switchPlayer();
+    //check for rolled 1
+    if (dice !== 1) {
+      currentScore += dice;
+      document.getElementById(`current--${activePlayer}`).textContent =
+        currentScore;
+    } else {
+      //switch to next player
+      switchPlayer();
+    }
   }
 };
 
@@ -63,14 +59,26 @@ roll.addEventListener('click', rollDice);
 
 // hold the game
 hold.addEventListener('click', function () {
-  // Add current score to active player
-  scores[activePlayer] += currentScore;
-  document.getElementById(`score--${activePlayer}`).textContent =
-    scores[activePlayer];
-  //check if player's score >= 100
+  if (playing) {
+    // Add current score to active player
+    scores[activePlayer] += currentScore;
+    document.getElementById(`score--${activePlayer}`).textContent =
+      scores[activePlayer];
+    //check if player's score >= 100
+    if (scores[activePlayer] >= 10) {
+      //finish the game
+      playing = false;
+      diceImage.classList.add('hidden');
 
-  //finish the game
-
-  //switch to the next player
-  switchPlayer();
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.add('player--winner');
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.remove('player--active');
+    } else {
+      //switch to the next player
+      switchPlayer();
+    }
+  }
 });
