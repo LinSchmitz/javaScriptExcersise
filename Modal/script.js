@@ -16,7 +16,7 @@ const openModal = function () {
 };
 
 btnsShowModal.forEach(btn => btn.addEventListener('click', openModal));
-
+//or
 // for (let i = 0; i < btnsShowModal.length; i++) {
 //   btnsShowModal[i].addEventListener('click', openModal);
 // }
