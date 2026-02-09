@@ -16,16 +16,28 @@ const player1CurrentScore = document.querySelector('#current--1');
 const diceImage = document.querySelector('.dice');
 
 // 👉 REAL game data (state)
+let scores, currentScore, activePlayer, playing;
 
-const scores = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
-let playing = true;
+const init = function () {
+  scores = [0, 0];
+  currentScore = 0;
+  activePlayer = 0;
+  playing = true;
 
-score0El.textContent = 0;
-score1El.textContent = 0;
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  player0CurrentScore.textContent = 0;
+  player1CurrentScore.textContent = 0;
 
-diceImage.classList.add('hidden');
+  diceImage.classList.add('hidden');
+
+  player0.classList.remove('player--winner');
+  player1.classList.remove('player--winner');
+  player0.classList.add('player--active');
+  player1.classList.remove('player--active');
+};
+init();
+
 const switchPlayer = function () {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
   currentScore = 0;
@@ -59,6 +71,7 @@ roll.addEventListener('click', rollDice);
 
 // hold the game
 hold.addEventListener('click', function () {
+  console.log(playing);
   if (playing) {
     // Add current score to active player
     scores[activePlayer] += currentScore;
@@ -82,3 +95,5 @@ hold.addEventListener('click', function () {
     }
   }
 });
+
+newGame.addEventListener('click', init);
