@@ -37,11 +37,13 @@ h1 {
 }
 
 .alien {
-  width: 50px;
-  height: 50px;
-  background: #22c55e;
-  border-radius: 50%;
-  position: absolute; /* IMPORTANT */
+  width: 150px;
+  height: 150px;
+  font-size: 50px; /* control emoji size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
   cursor: pointer;
 }
 
@@ -69,4 +71,8 @@ h1 {
 .btn:active {
   transform: translateY(0);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hidden {
+  display: none;
 }
