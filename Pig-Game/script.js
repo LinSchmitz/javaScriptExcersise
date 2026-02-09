@@ -32,12 +32,14 @@ diceImage.classList.add('hidden');
 
 const rollDice = function () {
   const dice = Math.trunc(Math.random() * 6) + 1;
-  console.log(dice);
 
+  //dice image display
+  diceImage.classList.remove('hidden');
+  diceImage.src = `dice-${dice}.png`;
+
+  //
   p1CurrentScore = dice;
   player1CurrentScore.textContent = p1CurrentScore;
-
-  //dice image
 };
 
 //Roll the Dice
