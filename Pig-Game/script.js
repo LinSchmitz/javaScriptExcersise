@@ -18,23 +18,30 @@ const diceImage = document.querySelector('.dice');
 // 👉 REAL game data (state)
 let diceImg;
 
+const scores = [0, 0];
 let currentScore = 0;
+// let totalScore = 0;
 
 let p0TotalScore = 0;
 let p1TotalScore = 0;
 
 let activePlayer = 0;
-// player0.classList.contains('player--active') ? '0' : '1';
-console.log(activePlayer);
+
 // Set total score to 0 at the beginning
 player0TotalScore.textContent = p0TotalScore;
 player1TotalScore.textContent = p1TotalScore;
 
 diceImage.classList.add('hidden');
+const switchPlayer = function () {
+  document.getElementById(`current--${activePlayer}`).textContent = 0;
+  currentScore = 0;
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  player0.classList.toggle('player--active');
+  player1.classList.toggle('player--active');
+};
 
 const rollDice = function () {
   const dice = Math.trunc(Math.random() * 6) + 1;
-  console.log(activePlayer);
 
   //dice image display
   diceImage.classList.remove('hidden');
@@ -47,11 +54,7 @@ const rollDice = function () {
       currentScore;
   } else {
     //switch to next player
-    document.getElementById(`current--${activePlayer}`).textContent = 0;
-    currentScore = 0;
-    activePlayer = activePlayer === 0 ? 1 : 0;
-    player0.classList.toggle('player--active');
-    player1.classList.toggle('player--active');
+    switchPlayer();
   }
 };
 
@@ -59,4 +62,15 @@ const rollDice = function () {
 roll.addEventListener('click', rollDice);
 
 // hold the game
-hold.addEventListener('click', function () {});
+hold.addEventListener('click', function () {
+  // Add current score to active player
+  scores[activePlayer] += currentScore;
+  document.getElementById(`score--${activePlayer}`).textContent =
+    scores[activePlayer];
+  //check if player's score >= 100
+
+  //finish the game
+
+  //switch to the next player
+  switchPlayer();
+});
