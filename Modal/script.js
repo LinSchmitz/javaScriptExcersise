@@ -21,10 +21,17 @@ btnsShowModal.forEach(btn => btn.addEventListener('click', openModal));
 //   btnsShowModal[i].addEventListener('click', openModal);
 // }
 
-btnCloseModal.addEventListener('click', closeModal);
-overlay.addEventListener('click', closeModal);
+if (btnCloseModal) {
+  btnCloseModal.addEventListener('click', closeModal);
+}
+
+if (overlay) {
+  overlay.addEventListener('click', closeModal);
+}
 
 //Esc
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
 });
