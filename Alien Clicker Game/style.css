@@ -1,99 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
-}
-
-html {
-  font-size: 62.5%;
-  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 400;
-  height: 100vh;
-  color: #333;
-  background-image: linear-gradient(to top left, #9eb0d7 0%, #9e7ada 100%);
+  font-family: sans-serif;
+  background: #0f172a;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.hud {
   display: flex;
-  align-items: center;
   justify-content: center;
+  gap: 30px;
+  margin-bottom: 15px;
+  font-size: 18px;
 }
 
-/* LAYOUT */
-main {
-  position: relative;
-  width: 80rem;
-  height: 50rem;
-  background-color: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(200px);
-  filter: blur();
-  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
-  border-radius: 9px;
+.game {
+  width: 600px;
+  height: 400px;
+  background: #020617;
+  border: 2px solid #38bdf8;
+  margin: 0 auto 20px;
+  position: relative; /* IMPORTANT */
   overflow: hidden;
-  display: flex;
 }
 
-/* ABSOLUTE POSITIONED ELEMENTS */
-.btn {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #444;
-  background: none;
-  border: none;
-  font-family: inherit;
-  font-size: 1.8rem;
-  text-transform: uppercase;
+.alien {
+  width: 50px;
+  height: 50px;
+  background: #22c55e;
+  border-radius: 50%;
+  position: absolute; /* IMPORTANT */
   cursor: pointer;
-  font-weight: 400;
-  transition: all 0.2s;
-
-  background-color: white;
-  background-color: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
-
-  padding: 0.7rem 2.5rem;
-  border-radius: 50rem;
-  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
 }
 
-.btn::first-letter {
-  font-size: 2.4rem;
-  display: inline-block;
-  margin-right: 0.7rem;
-}
-
-.btn--new {
-  top: 4rem;
-}
-.btn--roll {
-  top: 39.3rem;
-}
-.btn--hold {
-  top: 46.1rem;
-}
-
-.btn:active {
-  transform: translate(-50%, 3px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
-}
-
-.btn:focus {
-  outline: none;
-}
-
-.player--winner {
-  background-color: #2f2f2f;
-}
-
-.player--winner .name {
-  font-weight: 700;
-  color: #c7365f;
-}
-
-.hidden {
-  display: none;
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
 }

@@ -2,16 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Alien Clicker</title>
     <link rel="stylesheet" href="style.css" />
-    <title>👾 Alien Clicker Game</title>
   </head>
   <body>
-    <header>
-      <button class="btn btn--new">🔄 New game</button>
-    </header>
-    <main></main>
-    <script src="script.js"></script>
+    <h1>👾 Alien Clicker</h1>
+
+    <div class="hud">
+      <p>Score: <span id="score">0</span></p>
+      <p>Lives: <span id="lives">3</span></p>
+    </div>
+
+    <div class="game">
+      <!-- aliens will appear here -->
+    </div>
+
+    <button class="btn">New Game</button>
   </body>
 </html>
