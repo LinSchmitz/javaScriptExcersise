@@ -54,8 +54,8 @@ const restaurant = {
 // const [x, z, y, a = 1] = arr;
 // console.log(x, y, z, a);
 
-const [first, second] = restaurant.categories;
-console.log(first, second);
+// const [first, second] = restaurant.categories;
+// console.log(first, second);
 
 //swap old ver
 // let a = 1;
@@ -68,11 +68,25 @@ console.log(first, second);
 
 //new ver
 
-let x = 10;
-let z = 2;
+// let x = 10;
+// let z = 2;
 
-console.log('Before swap ' + x, z);
+// console.log('Before swap ' + x, z);
 
-[x, z] = [z, x];
+// [x, z] = [z, x];
 
-console.log('After swap ' + x, z);
+// console.log('After swap ' + x, z);
+
+//
+// const [starter, mainCourse] = [
+//   restaurant.starterMenu[0],
+//   restaurant.mainMenu[0],
+// ];
+
+// console.log(starter, mainCourse);
+
+//objects
+const { name, openingHours, categories } = restaurant;
+
+console.log(name);
+console.log(openingHours);
