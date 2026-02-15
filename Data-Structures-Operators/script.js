@@ -47,9 +47,32 @@ const restaurant = {
 };
 
 //Destructuring َArray
-const { name, categories } = restaurant;
-console.log(name, categories);
+// const { name, categories } = restaurant;
+// console.log(name, categories);
 
-const arr = [2, 3, 4];
-const [x, z, y, a = 1] = arr;
-console.log(x, y, z, a);
+// const arr = [2, 3, 4];
+// const [x, z, y, a = 1] = arr;
+// console.log(x, y, z, a);
+
+const [first, second] = restaurant.categories;
+console.log(first, second);
+
+//swap old ver
+// let a = 1;
+// let b = 2;
+// console.log('Before swap ' + a, b);
+// const temp = a;
+// a = b;
+// b = temp;
+// console.log('After swap ' + a, b);
+
+//new ver
+
+let x = 10;
+let z = 2;
+
+console.log('Before swap ' + x, z);
+
+[x, z] = [z, x];
+
+console.log('After swap ' + x, z);
