@@ -219,3 +219,133 @@ This pattern is heavily used in React props and modern APIs.
 ✔ Essential for modern JavaScript & React
 
 ---
+
+# 🧩 Rest Pattern & Parameters
+
+The **Rest Pattern** looks like the spread operator (`...`) but has the **opposite purpose**:
+
+- **Spread (`...`)** → expands elements **on the right side of `=` or in function calls**
+- **Rest (`...`)** → collects multiple elements **on the left side of `=` or as function parameters**
+
+---
+
+## 1️⃣ Rest in Destructuring Arrays
+
+```js
+// Spread (right side)
+const arr = [1, 2, ...[3, 4]];
+console.log(arr); // [1, 2, 3, 4]
+
+// Rest (left side)
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others); // 1 2 [3, 4, 5]
+```
+
+**Explanation:**
+
+- `a` gets `1`
+- `b` gets `2`
+- `...others` collects the rest `[3, 4, 5]` into an array
+
+---
+
+## 2️⃣ Rest with Arrays + Nested Destructuring
+
+```js
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+```
+
+**Example Output (assuming `mainMenu = ['Pizza','Pasta','Risotto']` and `starterMenu = ['Focaccia','Bruschetta']`):**
+
+```
+Pizza Risotto ['Pasta', 'Focaccia', 'Bruschetta']
+```
+
+**Explanation:**
+
+- `pizza` → first element of combined array (`Pizza`)
+- Skip second element (`Pasta`)
+- `risotto` → third element (`Risotto`)
+- `...otherFood` → collects the remaining items from the combined array
+
+---
+
+## 3️⃣ Rest in Objects
+
+```js
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+```
+
+**Output Example:**
+
+```
+{
+  thu: { open: 12, close: 22 },
+  fri: { open: 11, close: 23 }
+}
+```
+
+**Explanation:**
+
+- `sat` → extracted separately
+- `...weekdays` → collects **all other properties** into a new object
+
+---
+
+## 4️⃣ Rest in Functions (Variadic Functions)
+
+```js
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+
+add(2, 3); // 5
+add(5, 3, 7, 2); // 17
+add(8, 2, 5, 3, 2, 1, 4); // 25
+
+const x = [23, 5, 7];
+add(...x); // 35
+```
+
+**Explanation:**
+
+- `...numbers` collects **all arguments passed** into an array
+- You can iterate over them using loops, reduce, or other array methods
+- Spread operator can also be used to pass an array as separate arguments: `add(...x)`
+
+---
+
+## 5️⃣ Real-world Example with `restaurant.orderPizza`
+
+```js
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+restaurant.orderPizza('mushrooms');
+```
+
+**Explanation:**
+
+- If `orderPizza` is defined like this:
+
+```js
+orderPizza: function (mainIngredient, ...otherIngredients) { ... }
+```
+
+- `mainIngredient` → first argument (`mushrooms`)
+- `...otherIngredients` → all remaining ingredients in an array
+
+---
+
+## ✅ Key Notes
+
+| Feature | Spread `...`                             | Rest `...`                                   |
+| ------- | ---------------------------------------- | -------------------------------------------- |
+| Purpose | Expands elements                         | Collects elements                            |
+| Used    | Right-hand side of `=` or function calls | Left-hand side of `=` or function parameters |
+| Example | `[1, 2, ...arr]`                         | `[a, b, ...others] = arr`                    |
