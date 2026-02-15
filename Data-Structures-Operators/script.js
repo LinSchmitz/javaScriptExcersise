@@ -45,3 +45,11 @@ const restaurant = {
     },
   },
 };
+
+//Destructuring َArray
+const { name, categories } = restaurant;
+console.log(name, categories);
+
+const arr = [2, 3, 4];
+const [x, z, y, a = 1] = arr;
+console.log(x, y, z, a);
