@@ -349,3 +349,10 @@ orderPizza: function (mainIngredient, ...otherIngredients) { ... }
 | Purpose | Expands elements                         | Collects elements                            |
 | Used    | Right-hand side of `=` or function calls | Left-hand side of `=` or function parameters |
 | Example | `[1, 2, ...arr]`                         | `[a, b, ...others] = arr`                    |
+
+---
+
+## Author
+
+Built by [**Lin Schmitz**](https://github.com/linschmitz) 🎲
+Frontend Developer in progress
