@@ -1,6 +1,6 @@
 # JavaScript Destructuring Guide
 
-## 📌 What is Destructuring?
+## 📌 What is Destructuring ?
 
 **Destructuring** allows you to extract values from arrays or objects and assign them to variables in a clean and readable way.
 
