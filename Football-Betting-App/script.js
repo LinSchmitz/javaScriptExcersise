@@ -50,6 +50,8 @@ const [gk, ...fieldPlayers] = players1;
 // console.log(gk, fieldPlayers);
 
 //3
+// - Create an array `allPlayers` containing all **22 players** from both teams.
+
 const allPlayers = players1.concat(players2);
 // console.log(allPlayers);
 
