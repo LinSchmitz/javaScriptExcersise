@@ -103,8 +103,8 @@ console.log(undefined || null);
 
 console.log(undefined || 0 || '' || 'Hello' || 23 || null);
 
-//test
-restaurant.numGuests = 0;
+//
+// restaurant.numGuests = 0;
 const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
 console.log(guests1);
 
@@ -123,4 +123,5 @@ if (restaurant.orderPizza) {
   restaurant.orderPizza('mushrooms', 'spinach');
 }
 
+//better solution
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
