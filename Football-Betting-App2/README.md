@@ -1,73 +1,92 @@
-```markdown
-# ⚽ Football Betting App - Coding Challenge #1
+# ⚽ Football Betting App — Iteration Challenge
 
-We're building a **football betting app**
+This repository contains a small exercise focused on practicing **JavaScript iteration, object handling, and data aggregation** using a football match dataset.
 
-Suppose we get data from a web service about a certain game (`game` variable). In this challenge, we're going to work with that data.
+The goal is to work with an existing `game` object and deepen your understanding of how to extract meaningful insights from structured data.
+
+---
+
+## 📌 Objective
+
+You will analyze match information such as:
+
+- Which players scored
+- The betting odds for different outcomes
+- Statistical summaries derived from the data
+
+This challenge emphasizes **clean logic, dynamic data usage, and avoiding hard-coding values**.
+
+---
+
+## 🧠 What You Will Practice
+
+- Iterating over arrays with access to both values and positions
+- Performing calculations based on object data
+- Dynamically reading properties from objects
+- Building new objects from existing datasets
+- Writing readable, well-structured output
 
 ---
 
 ## 📝 Tasks
 
-### 1️⃣ Create player arrays for each team
+### 1️⃣ Goal Log
 
-- Create arrays `players1` and `players2` containing all players of each team.
-
----
-
-### 2️⃣ Separate goalkeeper and field players
-
-- For Bayern Munich (team 1), the **first player is the goalkeeper** (`gk`) and the rest are **field players** (`fieldPlayers`).
+1. Loop over the game.scored array and print each player name to the console,
+   along with the goal number (Example: "Goal 1: Lewandowski")
 
 ---
 
-### 3️⃣ Combine all players
+### 2️⃣ Average Odd Calculation
 
-- Create an array `allPlayers` containing all **22 players** from both teams.
-
----
-
-### 4️⃣ Add substitute players
-
-- During the game, Bayern Munich used **3 substitute players**.
-- Create `players1Final` including `'Thiago'`, `'Coutinho'` and `'Perisic'`.
+2. Use a loop to calculate the average odd and log it to the console (We already
+   studied how to calculate averages, you can go check if you don't remember)
 
 ---
 
-### 5️⃣ Extract odds
+### 3️⃣ Nicely Formatted Odds Output
 
-- From the `game.odds` object, create variables `team1`, `draw`, and `team2`.
-
----
-
-### 6️⃣ Function to print goals
-
-- Write a function `printGoals` that:
-  - Receives an **arbitrary number of player names** (not an array)
-  - Prints each player's name
-  - Prints the **total number of goals scored**
-
-**Test Data:**
-
-- First, use players: `'Davies'`, `'Muller'`, `'Lewandowski'`, `'Kimmich'`
-- Then, call the function again with players from `game.scored`
+3. Print the 3 odds to the console, but in a nice formatted way, exactly like this:
+   Odd of victory Bayern Munich: 1.33
+   Odd of draw: 3.25
+   Odd of victory Borrussia Dortmund: 6.5
+   Get the team names directly from the game object, don't hardcode them
+   (except for "draw"). Hint: Note how the odds and the game objects have the
+   same property names 😉
 
 ---
 
-### 7️⃣ Team more likely to win
+### 4️⃣ Bonus — Build a Scorers Summary Object
 
-- Print which team is more likely to win (**team with the lower odd**)
-- **Do NOT use if/else or ternary operators**
+4. Bonus: Create an object called 'scorers' which contains the names of the
+   players who scored as properties, and the number of goals as the value. In this
+   game, it will look like this:
+   {
+   Gnarby: 1,
+   Hummels: 1,
+   Lewandowski: 2
+   }
 
 ---
 
-## ℹ️ Notes
+## 🎯 Learning Outcome
 
-- Use **destructuring**, **spread operator**, and **short-circuiting** wherever possible
-- Focus on **clean, readable, and concise code**
+By completing this challenge, you will gain confidence in:
+
+- Transforming raw sports data into insights
+- Writing flexible code that depends on structure rather than fixed values
+- Understanding how real-world datasets are processed in analytics or betting applications
 
 ---
 
-**Author:** LinSchmitz  
-**Challenge:** Coding Challenge #1 - Football Betting App
-```
+## 🚀 Next Steps
+
+After finishing, try extending the app by:
+
+- Adding assists tracking
+- Calculating probabilities from odds
+- Supporting multiple matches instead of just one
+
+---
+
+Happy coding and enjoy building! ⚽

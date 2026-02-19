@@ -39,58 +39,40 @@ const game = {
   },
 };
 
-//1
-const players1 = game.players[0];
-const players2 = game.players[1];
+//  Task 1
 
-// console.log(players1, players2);
+// 1. Loop over the game.scored array and print each player name to the console,
+//    along with the goal number (Example: "Goal 1: Lewandowski")
 
-//2
-const [gk, ...fieldPlayers] = players1;
-// console.log(gk, fieldPlayers);
+const entries = Object.entries(game.scored);
+// console.log(entries);
+for (const [score, goalNumber] of entries) {
+  console.log(`Goal ${Number(score) + 1}: ${goalNumber}`);
+}
 
-//3
-// - Create an array `allPlayers` containing all **22 players** from both teams.
+// Task 2
+// 2. Use a loop to calculate the average odd and log it to the console (We already
+//    studied how to calculate averages, you can go check if you don't remember)
 
-const allPlayers = players1.concat(players2);
-// console.log(allPlayers);
+for (odd of game.odds) {
+  console.log(odd);
+}
 
-//4
-// - During the game, Bayern Munich used **3 substitute players**.
-// - Create `players1Final` including `'Thiago'`, `'Coutinho'` and `'Perisic'`.
+// Task 3
+// 3. Print the 3 odds to the console, but in a nice formatted way, exactly like this:
+//    Odd of victory Bayern Munich: 1.33
+//    Odd of draw: 3.25
+//    Odd of victory Borrussia Dortmund: 6.5
+//    Get the team names directly from the game object, don't hardcode them
+//    (except for "draw"). Hint: Note how the odds and the game objects have the
+//    same property names 😉
 
-const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
-
-// console.log(players1Final);
-
-//5 From the `game.odds` object, create variables `team1`, `draw`, and `team2`
-const team1 = game.odds.team1;
-const team2 = game.odds.team2;
-const draw = game.odds.x;
-
-//6
-// - Write a function `printGoals` that:
-//   - Receives an **arbitrary number of player names** (not an array)
-//   - Prints each player's name
-//   - Prints the **total number of goals scored**
-
-// **Test Data:**
-
-// - First, use players: `'Davies'`, `'Muller'`, `'Lewandowski'`, `'Kimmich'`
-// - Then, call the function again with players from `game.scored`
-
-const printGoals = function (...players) {
-  for (const player of players) console.log(player);
-  console.log(`Total goals: ${players.length}`);
-};
-
-printGoals(['Davies', 'Muller', 'Lewandowski', 'Kimmich']);
-printGoals(game.scored);
-
-//7
-// - Print which team is more likely to win (**team with the lower odd**)
-// - **Do NOT use if/else or ternary operators**
-
-team1 < team2 && console.log('Team 1 is more likely to win');
-team1 > team2 && console.log('Team 2 is more likely to win');
-team1 === team2 && console.log('It is likely a draw');
+// Task 4
+// 4. Bonus: Create an object called 'scorers' which contains the names of the
+//    players who scored as properties, and the number of goals as the value. In this
+//    game, it will look like this:
+//    {
+//    Gnarby: 1,
+//    Hummels: 1,
+//    Lewandowski: 2
+//    }
