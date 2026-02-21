@@ -77,6 +77,7 @@ for (const [key, value] of Object.entries(game.odds)) {
     ? console.log(`   Odd of victory ${game[key]}:${value} `)
     : console.log(`Odd of draw:${value}`);
 }
+
 // Task 4
 // 4. Bonus: Create an object called 'scorers' which contains the names of the
 //    players who scored as properties, and the number of goals as the value. In this
@@ -86,3 +87,5 @@ for (const [key, value] of Object.entries(game.odds)) {
 //    Hummels: 1,
 //    Lewandowski: 2
 //    }
+
+const scorers = {};
