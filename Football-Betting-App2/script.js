@@ -73,10 +73,9 @@ avg /= lng;
 //    same property names 😉
 
 for (const [key, value] of Object.entries(game.odds)) {
-  console.log(
-    ` ${key} !=="x" ? Odd of victory ${game[key]}:${value}: Odd of draw:${value}: `,
-  );
-  console.log(key);
+  key !== 'x'
+    ? console.log(`   Odd of victory ${game[key]}:${value} `)
+    : console.log(`Odd of draw:${value}`);
 }
 // Task 4
 // 4. Bonus: Create an object called 'scorers' which contains the names of the
