@@ -89,3 +89,12 @@ for (const [key, value] of Object.entries(game.odds)) {
 //    }
 
 const scorers = {};
+
+for (const score of game.scored) {
+  if (scorers[score]) {
+    scorers[score] += 1;
+  } else {
+    scorers[score] = 1;
+  }
+}
+console.log(scorers);
