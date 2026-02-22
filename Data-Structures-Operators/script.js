@@ -222,29 +222,35 @@ const ordersSet = new Set([
   'Pasta',
   'Pizza',
 ]);
+// console.log(ordersSet);
+// console.log(new Set('Lily'));
+// console.log(new Set('lily'));
+// console.log(new Set('Marc'));
+
+// console.log(ordersSet.size);
+// console.log(ordersSet.add('Garlic Bread'));
+// console.log(ordersSet.delete('pizza'));
+// console.log(ordersSet);
+// console.log(ordersSet.has('Risotto'));
+
+ordersSet.clear(); //delete all elements
 console.log(ordersSet);
-console.log(new Set('Lily'));
-console.log(new Set('lily'));
-console.log(new Set('Marc'));
+for (const order of ordersSet) console.log(order);
 
-console.log(ordersSet.size);
-console.log(ordersSet.add('Garlic Bread'));
-console.log(ordersSet.delete('pizza'));
-console.log(ordersSet);
-console.log(ordersSet.has('Risotto'));
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
 
-ordersSet.clear();
-console.log(ordersSet);
+const newStaff = new Set(staff);
+console.log(newStaff);
 
-// for (const order of ordersSet) console.log(order);
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
 
-// // Example
-// const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
-// const staffUnique = [...new Set(staff)];
-// console.log(staffUnique);
+console.log(new Set(staff).size); //unique amount size
+console.log(staff.length); //Array length
 
 // console.log(
 //   new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size,
 // );
 
-// console.log(new Set('jonasschmedtmann').size);
+console.log(new Set('jonasschmedtmann').size);
