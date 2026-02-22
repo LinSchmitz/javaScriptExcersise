@@ -233,24 +233,108 @@ const ordersSet = new Set([
 // console.log(ordersSet);
 // console.log(ordersSet.has('Risotto'));
 
-ordersSet.clear(); //delete all elements
-console.log(ordersSet);
-for (const order of ordersSet) console.log(order);
+// ordersSet.clear(); //delete all elements
+// console.log(ordersSet);
+// for (const order of ordersSet) console.log(order);
 
-// Example
-const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+// // Example
+// const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
 
-const newStaff = new Set(staff);
-console.log(newStaff);
+// const newStaff = new Set(staff);
+// console.log(newStaff);
 
-const staffUnique = [...new Set(staff)];
-console.log(staffUnique);
+// const staffUnique = [...new Set(staff)];
+// console.log(staffUnique);
 
-console.log(new Set(staff).size); //unique amount size
-console.log(staff.length); //Array length
+// console.log(new Set(staff).size); //unique amount size
+// console.log(staff.length); //Array length
 
-// console.log(
-//   new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size,
-// );
+// // console.log(
+// //   new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size,
+// // );
 
-console.log(new Set('jonasschmedtmann').size);
+// console.log(new Set('jonasschmedtmann').size);
+
+///////////////////////////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+// New Operations to Make Sets Useful!
+
+// const italianFoods1 = new Set([
+//   'pasta',
+//   'gnocchi',
+//   'tomatoes',
+//   'olive oil',
+//   'garlic',
+//   'basil',
+// ]);
+
+// const mexicanFoods1 = new Set([
+//   'tortillas',
+//   'beans',
+//   'rice',
+//   'tomatoes',
+//   'avocado',
+//   'garlic',
+// ]);
+
+// const commonFoods = italianFoods.intersection(mexicanFoods);
+// console.log('Intersection:', commonFoods);
+// console.log([...commonFoods]);
+
+// const italianMexicanFusion = italianFoods.union(mexicanFoods);
+// console.log('Union:', italianMexicanFusion);
+
+// console.log([...new Set([...italianFoods, ...mexicanFoods])]);
+
+// const uniqueItalianFoods = italianFoods.difference(mexicanFoods);
+// console.log('Difference italian', uniqueItalianFoods);
+
+// const uniqueMexicanFoods = mexicanFoods.difference(italianFoods);
+// console.log('Difference mexican', uniqueMexicanFoods);
+
+// const uniqueItalianAndMexicanFoods =
+//   italianFoods.symmetricDifference(mexicanFoods);
+// console.log(uniqueItalianAndMexicanFoods);
+
+// console.log(italianFoods.isDisjointFrom(mexicanFoods));
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+// Maps: Fundamentals
+const rest = new Map();
+
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze, Italy');
+console.log(rest.set(2, 'Lisbon, Portugal'));
+
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open :D')
+  .set(false, 'We are closed :(');
+
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+const time = 8;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+console.log(rest.has('categories'));
+rest.delete(2);
+// rest.clear();
+
+const arr = [1, 2];
+rest.set(arr, 'Test');
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
+console.log(rest.size);
+
+console.log(rest.get(arr));
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////////////////////
