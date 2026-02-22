@@ -227,14 +227,14 @@ console.log(new Set('Lily'));
 console.log(new Set('lily'));
 console.log(new Set('Marc'));
 
-// console.log(ordersSet.size);
-// console.log(ordersSet.has('Pizza'));
-// console.log(ordersSet.has('Bread'));
-// ordersSet.add('Garlic Bread');
-// ordersSet.add('Garlic Bread');
-// ordersSet.delete('Risotto');
-// // ordersSet.clear();
-// console.log(ordersSet);
+console.log(ordersSet.size);
+console.log(ordersSet.add('Garlic Bread'));
+console.log(ordersSet.delete('pizza'));
+console.log(ordersSet);
+console.log(ordersSet.has('Risotto'));
+
+ordersSet.clear();
+console.log(ordersSet);
 
 // for (const order of ordersSet) console.log(order);
 
