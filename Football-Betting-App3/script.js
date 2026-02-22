@@ -16,14 +16,9 @@ const gameEvents = new Map([
 // 1. Create an array 'events' of the different game events that happened (no
 //    duplicates)
 
-// 1️⃣ Get all the values from the Map
-const allEvents = [...gameEvents.values()];
-// console.log(allEvents);
+const events = [...new Set(gameEvents.values())];
 
-// 2️⃣ Remove duplicates using Set
-const events = [...new Set(allEvents)];
-
-// console.log(events);
+console.log(events);
 
 // 2. After the game has finished, is was found that the yellow card from minute 64
 //    was unfair. So remove this event from the game events log.
