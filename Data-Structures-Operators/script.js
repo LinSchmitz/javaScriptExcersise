@@ -392,11 +392,4 @@ for (const [key, value] of question) {
 const answer = Number(prompt('Your answer'));
 // const answer = 3;
 console.log(answer);
-
-// console.log(question.get(question.get('correct') === answer));
-
-// // Convert map to array
-// console.log([...question]);
-// // console.log(question.entries());
-// console.log([...question.keys()]);
-// console.log([...question.values()]);
+console.log(question.get(question.get('correct') === answer));
