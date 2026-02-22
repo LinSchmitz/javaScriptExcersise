@@ -300,28 +300,28 @@ const ordersSet = new Set([
 // console.log(italianFoods.isDisjointFrom(mexicanFoods));
 
 //1️⃣ Comparing Data (VERY common in real apps)
-const oldTags = ['js', 'react', 'css'];
-const newTags = ['js', 'react', 'node'];
+// const oldTags = ['js', 'react', 'css'];
+// const newTags = ['js', 'react', 'node'];
 
-const added = new Set(newTags).difference(new Set(oldTags));
-const removed = new Set(oldTags).difference(new Set(newTags));
+// const added = new Set(newTags).difference(new Set(oldTags));
+// const removed = new Set(oldTags).difference(new Set(newTags));
 
-console.log(added, removed);
+// console.log(added, removed);
 
-//2️⃣ Permissions / Roles Systems
-const adminPermissions = new Set(['read', 'write', 'delete']);
-const userPermissions = new Set(['read']);
+// //2️⃣ Permissions / Roles Systems
+// const adminPermissions = new Set(['read', 'write', 'delete']);
+// const userPermissions = new Set(['read']);
 
-console.log(adminPermissions.intersection(userPermissions));
+// console.log(adminPermissions.intersection(userPermissions));
 
-//3️⃣ Avoiding Duplicate Processing (VERY common)
-const processedUsers = new Set();
+// //3️⃣ Avoiding Duplicate Processing (VERY common)
+// const processedUsers = new Set();
 
-//4️⃣ Data Sync / Caching Problems
-//Frontend receives new data from API and must compare with cached data.
+// //4️⃣ Data Sync / Caching Problems
+// //Frontend receives new data from API and must compare with cached data.
 
-cachedIds.union(newIds);
-cachedIds.difference(newIds);
+// cachedIds.union(newIds);
+// cachedIds.difference(newIds);
 
 //////////////////////////////////////////////
 //////////////////////////////////////////////
@@ -367,3 +367,14 @@ cachedIds.difference(newIds);
 //////////////////////////////////////////////
 //////////////////////////////////////////////
 //////////////////////////////////////////////
+// Maps: Iteration
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct 🎉'],
+  [false, 'Try again!'],
+]);
+console.log(question);
