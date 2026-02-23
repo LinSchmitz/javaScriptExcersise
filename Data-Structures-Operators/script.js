@@ -3,9 +3,17 @@
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
 
-console.log(plane[0]);
-console.log(airline.slice(airline.indexOf('Air')));
+// let position = 0;
 
-console.log(airline.indexOf('r'));
-console.log(airline.lastIndexOf('r'));
-console.log(airline.indexOf('portugal'));
+// for (const air of airline) {
+//   for (const i = 0; i <= airline.length; i++) {
+//     const nextPosition = airline.indexOf(' ') + 1;
+//     console.log(airline.slice(position, nextPosition));
+//     i = nextPosition;
+//   }
+// }
+
+const passenger = 'jOnAS';
+const passengerLowerCase = passenger.toLowerCase();
+const firstLetter = passengerLowerCase[0];
+console.log(firstLetter.toUpperCase() + passengerLowerCase.slice(1));
