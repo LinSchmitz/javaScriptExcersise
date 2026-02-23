@@ -19,6 +19,8 @@ btn.addEventListener('click', function () {
       newWord[0].toLowerCase() +
       newWord[1][0].toUpperCase() +
       newWord[1].slice(1).toLowerCase();
-    console.log(camelCase);
+    // console.log(camelCase);
+    const final = camelCase + '✅'.repeat(i + 1);
+    console.log(final);
   }
 });
