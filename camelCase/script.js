@@ -16,11 +16,11 @@ btn.addEventListener('click', function () {
   for (let i = 0; i < splitWord.length; i++) {
     const newWord = splitWord[i].split('_');
     const camelCase =
-      newWord[0].toLowerCase() +
+      newWord[0].toLowerCase().trim() +
       newWord[1][0].toUpperCase() +
       newWord[1].slice(1).toLowerCase();
     // console.log(camelCase);
-    const final = camelCase + '✅'.repeat(i + 1);
+    const final = camelCase.padEnd(20, ' ') + '✅'.repeat(i + 1);
     console.log(final);
   }
 });
