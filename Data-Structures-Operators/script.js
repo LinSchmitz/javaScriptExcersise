@@ -1,15 +1,14 @@
 ///////////////////////////////////////
 // Working With Strings - Part 1
 
-const capitalName = function (name) {
-  const names = name.split(' ');
-  const namesUpper = [];
+const maskCreditCard = function (number) {
+  const str = number + '';
 
-  for (n of names) {
-    namesUpper.push(n[0].toUpperCase() + n.slice(1));
-  }
-  console.log(namesUpper.join(' '));
+  const endPart = str.slice(-4);
+  const maskNumber = endPart.padStart(str.length, '*');
+  console.log(maskNumber);
 };
 
-capitalName('Jonas schmedtmann');
-capitalName('jonas and matilda schmedtmann');
+maskCreditCard(64637836);
+maskCreditCard(43378463864647384);
+maskCreditCard('334859493847755774747');
