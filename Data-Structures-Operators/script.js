@@ -13,7 +13,12 @@ const plane = 'A320';
 //   }
 // }
 
-const passenger = 'jOnAS';
-const passengerLowerCase = passenger.toLowerCase();
-const firstLetter = passengerLowerCase[0];
-console.log(firstLetter.toUpperCase() + passengerLowerCase.slice(1));
+const correctName = function (passenger) {
+  const passengerLowerCase = passenger.toLowerCase();
+  const firstLetter = passengerLowerCase[0];
+  console.log(firstLetter.toUpperCase() + passengerLowerCase.slice(1));
+};
+
+correctName('joNAs');
+correctName('MaTiLdA');
+correctName('PITTER');
