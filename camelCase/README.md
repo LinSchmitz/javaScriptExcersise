@@ -14,6 +14,7 @@ first_name
 Some_Variable
 calculate_AGE
 delayed_departure
+
 ```
 
 ## Should produce this output (5 separate console.log outputs):
