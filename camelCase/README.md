@@ -19,10 +19,10 @@ delayed_departure
 ## Should produce this output (5 separate console.log outputs):
 
 ```
-underscoreCase ✅
-firstName ✅✅
-someVariable ✅✅✅
-calculateAge ✅✅✅✅
+underscoreCase   ✅
+firstName        ✅✅
+someVariable     ✅✅✅
+calculateAge     ✅✅✅✅
 delayedDeparture ✅✅✅✅✅
 ```
 
