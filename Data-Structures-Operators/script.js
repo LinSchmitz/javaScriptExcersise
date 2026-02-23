@@ -3,22 +3,17 @@
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
 
-// let position = 0;
-
-// for (const air of airline) {
-//   for (const i = 0; i <= airline.length; i++) {
-//     const nextPosition = airline.indexOf(' ') + 1;
-//     console.log(airline.slice(position, nextPosition));
-//     i = nextPosition;
-//   }
-// }
-
 const correctName = function (passenger) {
   const passengerLowerCase = passenger.toLowerCase();
   const firstLetter = passengerLowerCase[0];
   console.log(firstLetter.toUpperCase() + passengerLowerCase.slice(1));
 };
 
-correctName('joNAs');
-correctName('MaTiLdA');
-correctName('PITTER');
+// Split and join
+console.log('a+very+nice+string'.split('+'));
+console.log('Jonas Schmedtmann'.split(' '));
+
+const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);

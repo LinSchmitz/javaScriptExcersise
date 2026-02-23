@@ -191,6 +191,18 @@ const passengerCorrect =
 passengerLower[0].toUpperCase() + passengerLower.slice(1);
 console.log(passengerCorrect);
 
+//function Fix capitalization in name
+const correctName = function (passenger) {
+const passengerLowerCase = passenger.toLowerCase();
+const firstLetter = passengerLowerCase[0];
+console.log(firstLetter.toUpperCase() + passengerLowerCase.slice(1));
+};
+
+correctName('joNAs');
+correctName('MaTiLdA');
+correctName('PITTER');
+//
+
 // Comparing emails
 const email = 'hello@jonas.io';
 const loginEmail = ' Hello@Jonas.Io \n';
