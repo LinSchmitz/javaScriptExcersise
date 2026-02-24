@@ -4,4 +4,15 @@ const oneWord = function (str) {
   return str.replace(/ /g, '').toLowerCase();
 };
 
-console.log(oneWord('hi My Name Is Lili'));
+// console.log(oneWord('hi My Name Is Lili'));
+
+const upperFirstWord = function (str) {
+  const [first, ...other] = str.split(' ');
+  return [first.toUpperCase(), ...other].join(' ');
+};
+
+const transform = function (str, fn) {
+  console.log(fn(str));
+};
+
+transform('hi my Name Is Lili', upperFirstWord);
