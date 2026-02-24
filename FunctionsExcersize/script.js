@@ -1,18 +1,30 @@
 'use strict';
 
-const oneWord = function (str) {
-  return str.replace(/ /g, '').toLowerCase();
-};
+// const greet = function (greeting) {
+//   return function (name) {
+//     console.log(`${greeting} ${name} `);
+//   };
+// };
 
-// console.log(oneWord('hi My Name Is Lili'));
+// greet('Hey')('Jonas');
 
-const upperFirstWord = function (str) {
-  const [first, ...other] = str.split(' ');
-  return [first.toUpperCase(), ...other].join(' ');
-};
+const greet = greeting => name => console.log(`${greeting} ${name} `);
 
-const transform = function (str, fn) {
-  console.log(fn(str));
-};
+greet('Hi')('Jonas');
 
-transform('hi my Name Is Lili', upperFirstWord);
+// const oneWord = function (str) {
+//   return str.replace(/ /g, '').toLowerCase();
+// };
+
+// // console.log(oneWord('hi My Name Is Lili'));
+
+// const upperFirstWord = function (str) {
+//   const [first, ...other] = str.split(' ');
+//   return [first.toUpperCase(), ...other].join(' ');
+// };
+
+// const transform = function (str, fn) {
+//   console.log(fn(str));
+// };
+
+// transform('hi my Name Is Lili', upperFirstWord);
