@@ -1,30 +1,11 @@
 'use strict';
 
-// const greet = function (greeting) {
-//   return function (name) {
-//     console.log(`${greeting} ${name} `);
-//   };
-// };
+// Partial application
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
 
-// greet('Hey')('Jonas');
+const addVAT = addTax.bind(null, 0.23);
+// addVAT = value => value + value * 0.23;
 
-const greet = greeting => name => console.log(`${greeting} ${name} `);
-
-greet('Hi')('Jonas');
-
-// const oneWord = function (str) {
-//   return str.replace(/ /g, '').toLowerCase();
-// };
-
-// // console.log(oneWord('hi My Name Is Lili'));
-
-// const upperFirstWord = function (str) {
-//   const [first, ...other] = str.split(' ');
-//   return [first.toUpperCase(), ...other].join(' ');
-// };
-
-// const transform = function (str, fn) {
-//   console.log(fn(str));
-// };
-
-// transform('hi my Name Is Lili', upperFirstWord);
+console.log(addVAT(100));
+console.log(addVAT(23));
