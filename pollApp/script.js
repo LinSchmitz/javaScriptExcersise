@@ -9,7 +9,7 @@ const poll = {
 
   // 1. Register answer
   registerNewAnswer() {
-    const inputNumber = Number(
+    const answer = Number(
       prompt(
         `${this.question}\n${this.options.join('\n')}\n(Write option number)`,
       ),
@@ -17,11 +17,11 @@ const poll = {
 
     // Validate input
     if (
-      Number.isInteger(inputNumber) &&
-      inputNumber >= 0 &&
-      inputNumber < this.answers.length
+      Number.isInteger(answer) &&
+      answer >= 0 &&
+      answer < this.answers.length
     ) {
-      this.answers[inputNumber]++;
+      this.answers[answer]++;
     }
 
     // 4. Display results after answering
