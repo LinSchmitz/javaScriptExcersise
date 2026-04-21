@@ -1,6 +1,4 @@
 'use strict';
-const julia = [9, 2.5, 6, 8, 3]; //[3, 5, 2, 12, 7];
-const kate = [10, 5, 6, 1, 4]; //[4, 1, 15, 8, 3];
 
 const dogs = [
   { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
@@ -18,3 +16,12 @@ const dogs = [
 dogs.forEach(dog => {
   dog.recommendedFood = dog.weight ** 0.75 * 28;
 });
+
+console.log(dogs);
+
+// 2. Find Sarah's dog and log to the console whether it's eating too much or too
+//    little. Hint: Some dogs have multiple owners, so you first need to find Sarah in
+//    the owners array, and so this one is a bit tricky (on purpose) 🤓
+
+const sarahDog = dogs.find(dog => dog.owners.includes('Sarah'));
+console.log(sarahDog);
