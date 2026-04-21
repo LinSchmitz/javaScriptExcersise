@@ -43,3 +43,17 @@ dogs.forEach(dog => {
 
 console.log(ownersEatTooMuch);
 console.log(ownersEatTooLittle);
+
+// 4. Log a string to the console for each array created in 3., like this: "Matilda and
+//    Alice and Bob's dogs eat too much!" and "Sarah and John and Michael's dogs eat
+//    too little!"
+
+const eatTooMuch = ownersEatTooMuch.join(' and ') + "'s dogs eat too much!";
+console.log(eatTooMuch);
+
+const eatTooLittle =
+  ownersEatTooLittle.join(' and ') + "'s dogs eat too little!";
+console.log(eatTooLittle);
+
+// 5. Log to the console whether there is any dog eating exactly the amount of food
+//    that is recommended (just true or false)
