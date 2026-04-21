@@ -1,47 +1,102 @@
-///////////////////////////////////////
-// Coding Challenge #1
+# 🐶 JavaScript Coding Challenge #4
 
-Julia and Kate are doing a study on dogs. So each of them asked 5 dog owners about their dog's age, and stored the data into an array (one array for each). For now, they are just interested in knowing whether a dog is an adult or a puppy. A dog is an adult if it is at least 3 years old, and it's a puppy if it's less than 3 years old.
+This challenge is part of **The Complete JavaScript Course 25–26** and focuses on working with arrays, objects, and data transformations.
 
-Create a function 'checkDogs', which accepts 2 arrays of dog's ages ('dogsJulia' and 'dogsKate'), and does the following things:
+Julia and Kate are studying dogs 🐕 and analyzing whether they are eating **too much**, **too little**, or an **okay amount** of food.
 
-1. Julia found out that the owners of the FIRST and the LAST TWO dogs actually have cats, not dogs! So create a shallow copy of Julia's array, and remove the cat ages from that copied array (because it's a bad practice to mutate function parameters)
-2. Create an array with both Julia's (corrected) and Kate's data
-3. For each remaining dog, log to the console whether it's an adult ("Dog number 1 is an adult, and is 5 years old") or a puppy ("Dog number 2 is still a puppy 🐶")
-4. Run the function for both test datasets
+---
 
-HINT: Use tools from all lectures in this section so far 😉
+## 📌 Problem Description
 
-TEST DATA 1: Julia's data [3, 5, 2, 12, 7], Kate's data [4, 1, 15, 8, 3]
-TEST DATA 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
+- A dog is eating **too much** if its current food portion is **greater** than the recommended portion.
+- A dog is eating **too little** if its current food portion is **less** than the recommended portion.
+- A dog is eating an **okay amount** if its current portion is within **±10%** of the recommended portion.
 
-GOOD LUCK 😀
-//////////////////////////
-/////////////////////////
-///////////////////////////////////////
-// Coding Challenge #2
+---
 
-Let's go back to Julia and Kate's study about dogs. This time, they want to convert dog ages to human ages and calculate the average age of the dogs in their study.
+## 🧠 Tasks
 
-Create a function 'calcAverageHumanAge', which accepts an arrays of dog's ages ('ages'), and does the following things in order:
+1. Loop over the `dogs` array containing dog objects, and for each dog:
+   - Calculate the recommended food portion.
+   - Add it as a new property (`recommendedFood`) to the object.
+   - Do NOT create a new array.
 
-1. Calculate the dog age in human years using the following formula: if the dog is <= 2 years old, humanAge = 2 _ dogAge. If the dog is > 2 years old, humanAge = 16 + dogAge _ 4.
-2. Exclude all dogs that are less than 18 human years old (which is the same as keeping dogs that are at least 18 years old)
-3. Calculate the average human age of all adult dogs (you should already know from other challenges how we calculate averages 😉)
-4. Run the function for both test datasets
+   **Formula:**
 
-TEST DATA 1: [5, 2, 4, 1, 15, 8, 3]
-TEST DATA 2: [16, 6, 10, 5, 6, 1, 4]
+   ```
+   recommendedFood = weight ** 0.75 * 28
+   ```
 
-GOOD LUCK 😀
+   _(Weight is in kg, result is in grams)_
 
-///////////////////////////////////////
-// Coding Challenge #3
+---
 
-Rewrite the 'calcAverageHumanAge' function from the previous challenge, but this time as
-an arrow function, and using chaining!
+2. Find **Sarah's dog** and log whether it's eating **too much** or **too little**.
+   - ⚠️ Note: Dogs can have multiple owners.
 
-TEST DATA 1: [5, 2, 4, 1, 15, 8, 3]
-TEST DATA 2: [16, 6, 10, 5, 6, 1, 4]
+---
 
-GOOD LUCK 😀
+3. Create two arrays:
+   - `ownersEatTooMuch`
+   - `ownersEatTooLittle`
+
+---
+
+4. Log strings like:
+
+   ```
+   "Matilda and Alice and Bob's dogs eat too much!"
+   "Sarah and John and Michael's dogs eat too little!"
+   ```
+
+---
+
+5. Log whether **any dog is eating exactly the recommended amount** (`true/false`).
+
+---
+
+6. Log whether **any dog is eating an okay amount** (`true/false`).
+
+---
+
+7. Create an array of dogs that are eating an **okay amount**.
+
+---
+
+8. Create a **shallow copy** of the `dogs` array and sort it by:
+   - `recommendedFood` in **ascending order**
+
+---
+
+## 💡 Hints
+
+- Use different array methods (`map`, `filter`, `find`, `some`, `flatMap`, `sort`, etc.)
+- The "okay amount" condition:
+
+```js
+current > recommended * 0.9 && current < recommended * 1.1;
+```
+
+---
+
+## 🧪 Test Data
+
+```js
+const dogs = [
+  { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+  { weight: 8, curFood: 200, owners: ['Matilda'] },
+  { weight: 13, curFood: 275, owners: ['Sarah', 'John'] },
+  { weight: 32, curFood: 340, owners: ['Michael'] },
+];
+```
+
+---
+
+## 🎯 Goal
+
+Practice:
+
+- Array iteration
+- Object mutation
+- Conditional logic
+- Data transformation
