@@ -25,3 +25,21 @@ console.log(dogs);
 
 const sarahDog = dogs.find(dog => dog.owners.includes('Sarah'));
 console.log(sarahDog);
+
+// 3. Create an array containing all owners of dogs who eat too much
+//    ('ownersEatTooMuch') and an array with all owners of dogs who eat too little
+//    ('ownersEatTooLittle').
+
+const ownersEatTooMuch = [];
+const ownersEatTooLittle = [];
+
+dogs.forEach(dog => {
+  if (dog.curFood > dog.recommendedFood) {
+    ownersEatTooMuch.push(...dog.owners);
+  } else if (dog.curFood < dog.recommendedFood) {
+    ownersEatTooLittle.push(...dog.owners);
+  }
+});
+
+console.log(ownersEatTooMuch);
+console.log(ownersEatTooLittle);
