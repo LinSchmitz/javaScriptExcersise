@@ -61,3 +61,14 @@ console.log(eatTooLittle);
 const eatExactly = dogs.some(dog => dog.curFood === dog.recommendedFood);
 
 console.log(eatExactly);
+
+// 6. Log to the console whether there is any dog eating an okay amount of food
+//    (just true or false)
+
+const eatOkay = dogs.some(
+  dog =>
+    dog.curFood > dog.recommendedFood * 0.9 &&
+    dog.curFood < dog.recommendedFood * 1.1,
+);
+
+console.log(eatOkay);
