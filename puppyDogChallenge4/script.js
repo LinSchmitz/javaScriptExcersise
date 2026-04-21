@@ -57,3 +57,7 @@ console.log(eatTooLittle);
 
 // 5. Log to the console whether there is any dog eating exactly the amount of food
 //    that is recommended (just true or false)
+
+const eatExactly = dogs.some(dog => dog.curFood === dog.recommendedFood);
+
+console.log(eatExactly);
