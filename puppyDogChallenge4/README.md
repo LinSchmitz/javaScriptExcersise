@@ -1,85 +1,64 @@
-# 🐶 JavaScript Coding Challenge #4
+# Coding Challenge #4
 
-This challenge is part of **The Complete JavaScript Course 25–26** and focuses on working with arrays, objects, and data transformations.
+Julia and Kate are still studying dogs, and this time they are studying if dogs are  
+eating too much or too little.
 
-Julia and Kate are studying dogs 🐕 and analyzing whether they are eating **too much**, **too little**, or an **okay amount** of food.
+Eating too much means the dog's current food portion is larger than the  
+recommended portion, and eating too little is the opposite.
 
----
+Eating an okay amount means the dog's current food portion is within a range 10%  
+above and 10% below the recommended portion (see hint).
 
-## 📌 Problem Description
+## Your tasks:
 
-- A dog is eating **too much** if its current food portion is **greater** than the recommended portion.
-- A dog is eating **too little** if its current food portion is **less** than the recommended portion.
-- A dog is eating an **okay amount** if its current portion is within **±10%** of the recommended portion.
+1. Loop over the 'dogs' array containing dog objects, and for each dog, calculate  
+   the recommended food portion and add it to the object as a new property. Do  
+   not create a new array, simply loop over the array. Forumla:  
+   recommendedFood = weight \*_ 0.75 _ 28. (The result is in grams of  
+   food, and the weight needs to be in kg)
 
----
+2. Find Sarah's dog and log to the console whether it's eating too much or too  
+   little. Hint: Some dogs have multiple owners, so you first need to find Sarah in  
+   the owners array, and so this one is a bit tricky (on purpose) 🤓
 
-## 🧠 Tasks
+3. Create an array containing all owners of dogs who eat too much  
+   ('ownersEatTooMuch') and an array with all owners of dogs who eat too little  
+   ('ownersEatTooLittle').
 
-1. Loop over the `dogs` array containing dog objects, and for each dog:
-   - Calculate the recommended food portion.
-   - Add it as a new property (`recommendedFood`) to the object.
-   - Do NOT create a new array.
+4. Log a string to the console for each array created in 3., like this: "Matilda and  
+   Alice and Bob's dogs eat too much!" and "Sarah and John and Michael's dogs eat  
+   too little!"
 
-   **Formula:**
+5. Log to the console whether there is any dog eating exactly the amount of food  
+   that is recommended (just true or false)
 
-   ```
-   recommendedFood = weight ** 0.75 * 28
-   ```
+6. Log to the console whether there is any dog eating an okay amount of food  
+   (just true or false)
 
-   _(Weight is in kg, result is in grams)_
+7. Create an array containing the dogs that are eating an okay amount of food (try  
+   to reuse the condition used in 6.)
 
----
-
-2. Find **Sarah's dog** and log whether it's eating **too much** or **too little**.
-   - ⚠️ Note: Dogs can have multiple owners.
-
----
-
-3. Create two arrays:
-   - `ownersEatTooMuch`
-   - `ownersEatTooLittle`
-
----
-
-4. Log strings like:
-
-   ```
-   "Matilda and Alice and Bob's dogs eat too much!"
-   "Sarah and John and Michael's dogs eat too little!"
-   ```
+8. Create a shallow copy of the 'dogs' array and sort it by recommended food  
+   portion in an ascending order (keep in mind that the portions are inside the  
+   array's objects 😉)
 
 ---
 
-5. Log whether **any dog is eating exactly the recommended amount** (`true/false`).
+## The Complete JavaScript Course 26
+
+### Hints:
+
+§ Use many different tools to solve these challenges, you can use the summary  
+lecture to choose between them 😉
+
+§ Being within a range 10% above and below the recommended portion means:  
+current > (recommended _ 0.90) && current < (recommended _  
+1.10). Basically, the current portion should be between 90% and 110% of the  
+recommended portion.
 
 ---
 
-6. Log whether **any dog is eating an okay amount** (`true/false`).
-
----
-
-7. Create an array of dogs that are eating an **okay amount**.
-
----
-
-8. Create a **shallow copy** of the `dogs` array and sort it by:
-   - `recommendedFood` in **ascending order**
-
----
-
-## 💡 Hints
-
-- Use different array methods (`map`, `filter`, `find`, `some`, `flatMap`, `sort`, etc.)
-- The "okay amount" condition:
-
-```js
-current > recommended * 0.9 && current < recommended * 1.1;
-```
-
----
-
-## 🧪 Test Data
+## Test data:
 
 ```js
 const dogs = [
@@ -89,14 +68,3 @@ const dogs = [
   { weight: 32, curFood: 340, owners: ['Michael'] },
 ];
 ```
-
----
-
-## 🎯 Goal
-
-Practice:
-
-- Array iteration
-- Object mutation
-- Conditional logic
-- Data transformation
