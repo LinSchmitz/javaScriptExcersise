@@ -11,16 +11,9 @@ const countriesContainer = document.querySelector('.countries');
 
 ///////////////////////////////////////
 
-const request = new XMLHttpRequest();
-request.open('GET', 'https://restcountries.com/v3.1/name/germany');
-request.send();
-
-request.addEventListener('load', function () {
-  const [data] = JSON.parse(this.responseText);
-  console.log(data);
-
+const renderCountry = function (data, className = '') {
   const html = `
-         <article class="country ">
+         <article class="country ${className} ">
           <img class="country__img" src="${data.flags.png}" />
           <div class="country__data">
             <h3 class="country__name">${data.name.common}</h3>
@@ -34,4 +27,36 @@ request.addEventListener('load', function () {
 
   countriesContainer.insertAdjacentHTML('beforeend', html);
   countriesContainer.style.opacity = 1;
-});
+};
+
+const getCountryAndNeighbours = function (country) {
+  const request = new XMLHttpRequest();
+  request.open('GET', `https://restcountries.com/v3.1/name/${country} `);
+  request.send();
+
+  request.addEventListener('load', function () {
+    const [data] = JSON.parse(this.responseText);
+    console.log(data);
+    renderCountry(data);
+
+    const [neihbour] = data.borders;
+
+    if (!neihbour) return;
+
+    const request2 = new XMLHttpRequest();
+    request2.open('GET', `https://restcountries.com/v3.1/alpha/${neihbour} `);
+    request2.send();
+
+    request2.addEventListener('load', function () {
+      //   console.log(this.responseText);
+      const [data2] = JSON.parse(this.responseText);
+
+      renderCountry(data2, 'neighbour');
+    });
+  });
+};
+
+getCountryAndNeighbours('germany');
+// getCountryAndNeighbours('USA');
+// getCountryAndNeighbours('portugal');
+// getCountryAndNeighbours('Armenia');
