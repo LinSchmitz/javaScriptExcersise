@@ -27,7 +27,7 @@ const renderCountry = function (data, className = '') {
   countriesContainer.insertAdjacentHTML('beforeend', html);
   countriesContainer.style.opacity = 1;
 };
-
+//Chaining Promises
 const getCountryData = function (country) {
   //country 1
   fetch(`https://restcountries.com/v3.1/name/${country}`)
@@ -44,4 +44,9 @@ const getCountryData = function (country) {
     });
 };
 
-getCountryData('portugal');
+(btn,
+  addEventListener('click', function () {
+    getCountryData('germany');
+    // getCountryData('portugal');
+    // getCountryData('portugal');
+  }));
