@@ -10,6 +10,12 @@ const countriesContainer = document.querySelector('.countries');
 // https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}
 
 ///////////////////////////////////////
+
+const renderError = function (msg) {
+  countriesContainer.insertAdjacentText('beforeend', msg);
+  countriesContainer.style.opacity = 1;
+};
+
 const renderCountry = function (data, className = '') {
   const html = `
          <article class="country ${className} ">
@@ -27,6 +33,7 @@ const renderCountry = function (data, className = '') {
   countriesContainer.insertAdjacentHTML('beforeend', html);
   countriesContainer.style.opacity = 1;
 };
+
 //Chaining Promises
 const getCountryData = function (country) {
   //country 1
@@ -42,7 +49,9 @@ const getCountryData = function (country) {
     })
     .then(response => response.json())
     .then(data => renderCountry(data[0], 'neighbour'))
-    .catch(err => alert(err));
+    .catch(err => {
+      renderError(`Something went wrong 💥💥💥 ${err.message}. Try again!`);
+    });
 };
 
 btn.addEventListener('click', function () {
