@@ -38,15 +38,15 @@ const getCountryData = function (country) {
 
       if (!neighbour) return;
       //country 2
-      return fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`)
-        .then(response => response.json())
-        .then(data => renderCountry(data[0], 'neighbour'));
-    });
+      return fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`);
+    })
+    .then(response => response.json())
+    .then(data => renderCountry(data[0], 'neighbour'))
+    .catch(err => alert(err));
 };
 
-(btn,
-  addEventListener('click', function () {
-    getCountryData('germany');
-    // getCountryData('portugal');
-    // getCountryData('portugal');
-  }));
+btn.addEventListener('click', function () {
+  getCountryData('germany');
+  // getCountryData('portugal');
+  // getCountryData('portugal');
+});
