@@ -1,3 +1,4 @@
-import { addToCart } from './shoppingCart.js';
+import * as shoppingCart from './shoppingCart.js';
 
-addToCart('bread', 5);
+shoppingCart.addToCart('bread', 5);
+console.log(shoppingCart.totalPrice, shoppingCart.totalQuantity);
